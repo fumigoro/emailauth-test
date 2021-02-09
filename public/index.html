@@ -20,9 +20,10 @@
   <script defer src="/__/firebase/8.2.6/firebase-performance.js"></script>
   <!-- <script defer src="/__/firebase/8.2.6/firebase-ui-auth.js"></script> -->
 
-  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+  <!-- <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" /> -->
 
+  <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <!-- 
@@ -62,28 +63,6 @@
       margin: 0 0 16px;
     }
 
-    /* #message p {
-      line-height: 140%;
-      margin: 16px 0 24px;
-      font-size: 14px;
-    }
-
-    #message a ,input[type="button"]{
-      display: block;
-      text-align: center;
-      background: #039be5;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: white;
-      padding: 16px;
-      border-radius: 4px;
-    }
-
-    #message,
-    #message a {
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    } */
-
     #load {
       color: rgba(0, 0, 0, 0.4);
       text-align: center;
@@ -113,17 +92,9 @@
 
 <body>
   <div id="message">
-    <!-- <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a> -->
     <h1>Welcome to My Awesome App</h1>
     <h2>Login</h2>
     <form action="">
-      <!-- <p>Email</p>
-      <p><input type="email" id="email"></p>
-      <p>Password</p>
-      <p><input type="password" id="password"></p> -->
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
@@ -147,7 +118,6 @@
 
     </form>
     <!-- <div id="firebaseui-auth-container"></div> -->
-    <!-- <div id="loader">Loading...</div> -->
   </div>
   <p id="load">Firebase SDK Loading&hellip;</p>
 
@@ -200,7 +170,7 @@
       }
 
       // Initialize the FirebaseUI Widget using Firebase.
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // var ui = new firebaseui.auth.AuthUI(firebase.auth());
       // ui.start('#firebaseui-auth-container', {
       //   // ログイン完了時のリダイレクト先
       //   signInSuccessUrl: '/done.html',
