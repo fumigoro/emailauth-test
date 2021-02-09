@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Account</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/8.2.6/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/8.2.6/firebase-auth.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-database.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-functions.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-storage.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-analytics.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-remote-config.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-performance.js"></script>
+  <!-- <script defer src="/__/firebase/8.2.6/firebase-ui-auth.js"></script> -->
+
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+  <style media="screen">
+    body {
+      background: #ECEFF1;
+      color: rgba(0, 0, 0, 0.87);
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #message {
+      background: white;
+      max-width: 500px;
+      margin: 100px auto 16px;
+      padding: 32px 24px;
+      border-radius: 3px;
+    }
+
+    #message h2 {
+      color: #ffa100;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    #message h1 {
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.6);
+      margin: 0 0 16px;
+    }
+
+    #message p {
+      line-height: 140%;
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+
+    /* #message a {
+      display: block;
+      text-align: center;
+      background: #039be5;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    #message,
+    #message a {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    } */
+
+    #load {
+      color: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      body,
+      #message {
+        margin-top: 0;
+        background: white;
+        box-shadow: none;
+      }
+
+      body {
+        border-top: 16px solid #ffa100;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="message">
+    <!-- <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a> -->
+    <h1>Welcome to My Awesome App</h1>
+    <h2>Create a new account.</h2>
+    <form action="">
+      <!-- <label for="userName">User name</label>
+      <p><input type="text" id="userName" autocomplete="new-password"></p>
+      <label for="email">Email</label>
+      <p><input type="email" id="email" autocomplete="new-password"></p>
+      <label for="password">Password</label>
+      <p><input type="password" id="password" autocomplete="new-password"></p>
+      <p></p> -->
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" autocomplete="new-password"
+          required>
+        <div id="emailFeedback" class="invalid-feedback">
+          岐阜大学発行の学部生メールアドレスのみ利用可能です。
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" autocomplete="new-password" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">User name</label>
+        <input type="text" class="form-control" id="userName" aria-describedby="emailHelp" autocomplete="new-password"
+          required>
+      </div>
+      <p>
+      <div class="mb-3">
+        <div id="signupMessage" class="invalid-feedback" style="display: inline;">
+        </div>
+      </div>
+      <buttton type="button" id="nextButton" value="Next" class="btn btn-primary">Next</buttton>
+      アカウントをお持ちの場合は<a href="/">ログイン</a>
+      </p>
+    </form>
+    <!-- <div id="firebaseui-auth-container"></div> -->
+    <!-- <div id="loader">Loading...</div> -->
+  </div>
+  <p id="load">Firebase SDK Loading&hellip;</p>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/8.2.6/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+
+  <script>
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadEl = document.querySelector('#load');
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      // firebase.auth().onAuthStateChanged(user => { });
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.firestore().doc('/foo/bar').get().then(() => { });
+      // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      // firebase.analytics(); // call to activate
+      // firebase.analytics().logEvent('tutorial_completed');
+      // firebase.performance(); // call to activate
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+      try {
+        let app = firebase.app();
+        let features = [
+          'auth',
+          'database',
+          'firestore',
+          'functions',
+          'messaging',
+          'storage',
+          'analytics',
+          'remoteConfig',
+          'performance',
+        ].filter(feature => typeof app[feature] === 'function');
+        loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+      } catch (e) {
+        console.error(e);
+        loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+      }
+
+      //   // Initialize the FirebaseUI Widget using Firebase.
+      //   var ui = new firebaseui.auth.AuthUI(firebase.auth()); 
+      //   ui.start('#firebaseui-auth-container', {
+      //     // ログイン完了時のリダイレクト先
+      //     signInSuccessUrl: '/done.html',
+      //     signInOptions: [
+      //     firebase.auth.EmailAuthProvider.PROVIDER_ID
+      //     ],
+      //       // Other config options...
+      //     });
+      document.getElementById("nextButton").addEventListener("click", () => {
+        //入力欄からEmailとPW取得
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        //岐阜大学の学部生メールアドレス出ない場合ハネる
+        if (email.match("[a-z][0-9]{7}@edu.gifu-u.ac.jp") === null) {
+          document.getElementById("emailFeedback").style = "display:inline;";
+          document.getElementById("email").classList.add("is-invalid");
+          return;
+        }
+        document.getElementById("emailFeedback").style = "display:none;";
+        document.getElementById("email").classList.remove("is-invalid");
+        console.log("OK")
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then((user) => {
+            //ログイン後画面へ遷移
+            location.href = "done.html";
+          })
+          .catch((error) => {
+            //アカウント作成に失敗時(Email重複など)
+
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            document.getElementById("signupMessage").innerHTML = errorMessage;
+            // ..
+          });
+          })
+    });
+
+
+  </script>
+</body>
+
+</html>
