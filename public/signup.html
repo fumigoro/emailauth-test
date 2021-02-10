@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-  
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  
-    <style media="screen">
-      body {
-        background: #ECEFF1;
-        color: rgba(0, 0, 0, 0.87);
-        font-family: Roboto, Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-  
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Firebase Hosting</title>
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <style media="screen">
+    body {
+      background: #ECEFF1;
+      color: rgba(0, 0, 0, 0.87);
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #message {
+      background: white;
+      max-width: 500px;
+      margin: 100px auto 16px;
+      padding: 32px 24px;
+      border-radius: 3px;
+    }
+
+    #message h2 {
+      color: #ffa100;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    #message h1 {
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.6);
+      margin: 0 0 16px;
+    }
+
+    #load {
+      color: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    @media (max-width: 600px) {
+
+      body,
       #message {
+        margin-top: 0;
         background: white;
-        max-width: 500px;
-        margin: 100px auto 16px;
-        padding: 32px 24px;
-        border-radius: 3px;
+        box-shadow: none;
       }
-  
-      #message h2 {
-        color: #ffa100;
-        font-weight: bold;
-        font-size: 16px;
-        margin: 0 0 8px;
+
+      body {
+        border-top: 16px solid #ffa100;
       }
-  
-      #message h1 {
-        font-size: 22px;
-        font-weight: 300;
-        color: rgba(0, 0, 0, 0.6);
-        margin: 0 0 16px;
-      }
-  
-      #load {
-        color: rgba(0, 0, 0, 0.4);
-        text-align: center;
-        font-size: 13px;
-      }
-  
-      input:focus {
-        outline: none;
-      }
-  
-      @media (max-width: 600px) {
-  
-        body,
-        #message {
-          margin-top: 0;
-          background: white;
-          box-shadow: none;
-        }
-  
-        body {
-          border-top: 16px solid #ffa100;
-        }
-  
-      }
-    </style>
-  </head>
+
+    }
+  </style>
+</head>
 
 <body>
   <div id="message">
@@ -121,18 +121,33 @@
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script defer src="/__/firebase/8.2.6/firebase-auth.js"></script>
-        <script defer src="/__/firebase/8.2.6/firebase-database.js"></script>
-        <!-- <script defer src="/__/firebase/8.2.6/firebase-firestore.js"></script> -->
-        <!-- <script defer src="/__/firebase/8.2.6/firebase-functions.js"></script> -->
-        <!-- <script defer src="/__/firebase/8.2.6/firebase-messaging.js"></script> -->
-        <!-- <script defer src="/__/firebase/8.2.6/firebase-storage.js"></script> -->
-        <!-- <script defer src="/__/firebase/8.2.6/firebase-analytics.js"></script> -->
-        <!-- <script defer src="/__/firebase/8.2.6/firebase-remote-config.js"></script> -->
-        <!-- <script defer src="/__/firebase/8.2.6/firebase-performance.js"></script> -->
-        <!-- <script defer src="/__/firebase/8.2.6/firebase-ui-auth.js"></script> -->
-        <!-- Initialize Firebase -->
-        <script src="/__/firebase/init.js?useEmulator=true"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-auth.js"></script>
+  <script defer src="/__/firebase/8.2.6/firebase-database.js"></script>
+  <!-- <script defer src="/__/firebase/8.2.6/firebase-firestore.js"></script> -->
+  <!-- <script defer src="/__/firebase/8.2.6/firebase-functions.js"></script> -->
+  <!-- <script defer src="/__/firebase/8.2.6/firebase-messaging.js"></script> -->
+  <!-- <script defer src="/__/firebase/8.2.6/firebase-storage.js"></script> -->
+  <!-- <script defer src="/__/firebase/8.2.6/firebase-analytics.js"></script> -->
+  <!-- <script defer src="/__/firebase/8.2.6/firebase-remote-config.js"></script> -->
+  <!-- <script defer src="/__/firebase/8.2.6/firebase-performance.js"></script> -->
+  <!-- <script defer src="/__/firebase/8.2.6/firebase-ui-auth.js"></script> -->
+  <!-- Initialize Firebase -->
+  <!-- <script src="/__/firebase/init.js?useEmulator=true"></script> -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBvGirPsO0QAIekHya2uhyh3i8HvqTN2oA",
+      authDomain: "emailauth-test.firebaseapp.com",
+      databaseURL: "https://emailauth-test-default-rtdb.firebaseio.com",
+      projectId: "emailauth-test",
+      storageBucket: "emailauth-test.appspot.com",
+      messagingSenderId: "490960477220",
+      appId: "1:490960477220:web:43b42d5cdb271b125a8cb1"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 
   <script>
 
@@ -209,7 +224,7 @@
             document.getElementById("signupMessage").innerHTML = errorMessage;
             // ..
           });
-          })
+      })
     });
 
 
